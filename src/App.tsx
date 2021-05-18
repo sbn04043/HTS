@@ -1,7 +1,7 @@
-import Test from './pages/Test';
+import Trade from './pages/Trade';
 
 const App = () => {
-  return <Test />;
+  return <Trade />;
 };
 
 export default App;

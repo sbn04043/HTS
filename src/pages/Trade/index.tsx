@@ -1,11 +1,13 @@
 import { Container, Grid } from '@material-ui/core';
 import Order from './components/Order';
+import Search from './components/Search';
+
 const Trade = () => {
   return (
     <Container style={{ backgroundColor: '#424AE7' }}>
       <Grid container style={{ backgroundColor: '#42f566' }}>
         <Grid item xs={12} lg={4}>
-          검색
+          <Search />
         </Grid>
 
         <Grid item xs={12} lg={8}>

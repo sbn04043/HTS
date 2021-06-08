@@ -23,15 +23,16 @@ const increaseOption = {
   },
   plugins: {
     legend: {
-      display: 'false',
+      display: false,
     },
   },
+  responsive: true,
   maintainAspectRatio: false,
   scales: {
     x: {
       grid: { display: false, drawBorder: false },
-      min: 0,
-      max: 30,
+      min: -30,
+      max: 0,
       ticks: {
         display: false,
         stepSize: 5,
@@ -55,9 +56,10 @@ const decreaseOption = {
   },
   plugins: {
     legend: {
-      display: 'false',
+      display: false,
     },
   },
+  responsive: true,
   maintainAspectRatio: false,
   scales: {
     x: {
@@ -127,10 +129,10 @@ const increaseAskingPrices: RowType[] = [
     price: 9900,
     percent: -1,
     dataSet: {
-      labels: ['Red'],
+      labels: [''],
       datasets: [
         {
-          data: [12],
+          data: [-12],
           backgroundColor: ['rgba(255, 99, 132, 1)'],
           borderColor: ['rgba(255, 99, 132, 0.2)'],
           borderWidth: 1,
@@ -142,10 +144,10 @@ const increaseAskingPrices: RowType[] = [
     price: 9800,
     percent: -2,
     dataSet: {
-      labels: ['Blue'],
+      labels: [''],
       datasets: [
         {
-          data: [19],
+          data: [-19],
           backgroundColor: ['rgba(54, 162, 235, 1)'],
           borderColor: ['rgba(54, 162, 235, 0.2)'],
           borderWidth: 1,
@@ -157,10 +159,10 @@ const increaseAskingPrices: RowType[] = [
     price: 9700,
     percent: -3,
     dataSet: {
-      labels: ['Yellow'],
+      labels: [''],
       datasets: [
         {
-          data: [3],
+          data: [-3],
           backgroundColor: ['rgba(255, 206, 86, 1)'],
           borderColor: ['rgba(255, 206, 86, 0.2)'],
           borderWidth: 1,
@@ -172,10 +174,10 @@ const increaseAskingPrices: RowType[] = [
     price: 9600,
     percent: -4,
     dataSet: {
-      labels: ['Green'],
+      labels: [''],
       datasets: [
         {
-          data: [5],
+          data: [-5],
           backgroundColor: ['rgba(153, 102, 255, 1'],
           borderColor: ['rgba(153, 102, 255, 0.2'],
           borderWidth: 1,
@@ -187,10 +189,10 @@ const increaseAskingPrices: RowType[] = [
     price: 9500,
     percent: -5,
     dataSet: {
-      labels: ['Purple'],
+      labels: [''],
       datasets: [
         {
-          data: [2],
+          data: [-2],
           backgroundColor: ['rgba(255, 19, 64, 1)'],
           borderColor: ['rgba(255, 19, 64, 0.2)'],
           borderWidth: 1,
@@ -288,28 +290,28 @@ const AskingPrice = () => {
             {increaseAskingPrices.map((row: RowType) => {
               return (
                 <TableRow key={row.price}>
-                  <TableCell></TableCell>
-                  <TableCell>{row.price}</TableCell>
-                  <TableCell>{row.percent}%</TableCell>
                   <TableCell>
                     <Box width="100px" height="50px">
                       <Bar type="" data={row.dataSet} options={increaseOption} />
                     </Box>
                   </TableCell>
+                  <TableCell>{row.price}</TableCell>
+                  <TableCell>{row.percent}%</TableCell>
+                  <TableCell></TableCell>
                 </TableRow>
               );
             })}
             {decreaseAskingPrices.map((row: RowType) => {
               return (
                 <TableRow key={row.price}>
+                  <TableCell></TableCell>
+                  <TableCell>{row.price}</TableCell>
+                  <TableCell>{row.percent}%</TableCell>
                   <TableCell>
                     <Box width="100px" height="50px">
                       <Bar type="" data={row.dataSet} options={decreaseOption} />
                     </Box>
                   </TableCell>
-                  <TableCell>{row.price}</TableCell>
-                  <TableCell>{row.percent}%</TableCell>
-                  <TableCell></TableCell>
                 </TableRow>
               );
             })}

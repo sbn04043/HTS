@@ -2,6 +2,7 @@ import { Container, Grid } from '@material-ui/core';
 import Order from './components/Order';
 import Search from './components/Search';
 import AskingPrice from './components/AskingPrice';
+import ItemChart from './components/ItemChart';
 
 const Trade = () => {
   return (
@@ -18,10 +19,9 @@ const Trade = () => {
             </Grid>
 
             <Grid item xs={12} lg={12}>
-              차트
+              <ItemChart />
             </Grid>
             <Grid item xs={12} lg={6}>
-              호가
               <AskingPrice />
             </Grid>
             <Grid item xs={12} lg={6}>

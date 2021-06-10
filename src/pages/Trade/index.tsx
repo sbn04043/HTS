@@ -3,6 +3,7 @@ import Order from './components/Order';
 import Search from './components/Search';
 import AskingPrice from './components/AskingPrice';
 import ItemChart from './components/ItemChart';
+import CurrentPrice from './components/CurrentPrice';
 
 const Trade = () => {
   return (
@@ -15,7 +16,7 @@ const Trade = () => {
         <Grid item xs={12} lg={8}>
           <Grid container style={{ backgroundColor: '#64E8F8' }}>
             <Grid item xs={12} lg={12}>
-              현재가
+              <CurrentPrice />
             </Grid>
 
             <Grid item xs={12} lg={12}>
